@@ -21,11 +21,11 @@ alias notepyd="python3 ~/path/to/notepyd.py"
   Notepyd runs via terminal arguments, the usage is as follows:
 
 ```
-        notepyd list          - Lists all current notes
-        notepyd add  'title'  - Allows you to enter a note
-        notepyd tick 'title'  - Check off a done task
-        notepyd del  'title'  - Removes a note of your choice
-        notepyd delall        - Removes all notes in the database.
+        notepyd list                - Lists all current notes
+        notepyd add  'title'        - Allows you to enter a note
+        notepyd tick 'title' index  - Check off a done task
+        notepyd del  'title'        - Removes a note of your choice
+        notepyd delall              - Removes all notes in the database.
 ```
 
 ## Contributing
