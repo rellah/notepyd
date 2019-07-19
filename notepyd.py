@@ -5,10 +5,12 @@
 
     Notepyd Usage:
         notes list          - Lists all current notes
+        tes l
         notes add  'title'  - Allows you to enter a note
         notes tick 'title'  - Check off a done task
         notes del  'title'  - Removes a note of your choice
         notes delall        - Removes all notes in the database.
+https://github.com/rellah/py-scripts/invitations
 
 """
 import shelve
@@ -36,7 +38,7 @@ else:
                 Notes.view_note(notesShelf, sys.argv[2])
         if len(sys.argv) == 4:
             if sys.argv[1].lower()   == 'tick':
-                Notes.delete_step(notesShelf, sys.argv[2], sys.arg[3])
+                Notes.delete_step(notesShelf, sys.argv[2], sys.argv[3])
     # Closes the database safely before termination
     finally:
         notesShelf.close()

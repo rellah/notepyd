@@ -1,8 +1,10 @@
 """
-    Notes class
+Notes class
      Dedicated to encapsulating the listing, adding, removing etc.
      and removing clutter from the main class.
 """
+
+
 class Notes:
     def __init__(self):
         pass
@@ -23,7 +25,7 @@ class Notes:
             for index, line in content.items():
                 print("%d. %s" % (index, line))
             print("")
-    
+
     def add_note(shelf, title):
         currentNotes = dict()
         count = 1
@@ -37,8 +39,21 @@ class Notes:
                 print("Note successfully added!")
                 break
 
-    # TODO
+    # TODO Add in sorting by index once a step has been deleted
     def delete_step(shelf, title, step):
+        step = int(step)
+        content = shelf[title]
+        if step in content.keys():
+            del content[step]
+            if len(content.keys()) >= 1:
+                shelf[title] = content
+                print("Task complete!")
+            else:
+                del shelf[title]
+                print("You completed all your tasks!")
+
+    # TODO
+    def add_step(shelf, title, append_step):
         pass
 
     def delete_note(shelf, title):
@@ -52,7 +67,6 @@ class Notes:
             del shelf[title]
             print("Deleting note '%s'..." % (title))
 
-    # TODO: 
     def view_note(shelf, title):
         if title in shelf.keys():
             print("+----%s----+" % (title))
