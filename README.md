@@ -10,10 +10,15 @@ A simple note taking script by Rellah
   git clone https://github.com/rellah/notepyd.git
   ```
 
-  Source the script in your .bashrc, .zshrc by typing:
+  Alias the script in your .bashrc, .zshrc by adding the following to it:
 
 ```
 alias notepyd="python3 ~/path/to/notepyd.py"
+```
+
+Then simply restart your terminal or source the .rc, example for .zshrc:
+```
+source ~/.(zshrc
 ```
 
 ### Usage
