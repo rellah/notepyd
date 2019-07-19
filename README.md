@@ -3,6 +3,12 @@
 A simple note taking script by Rellah
 
 ## Getting Started
+  
+  Clone or download the repository
+  
+  ```
+  git clone https://github.com/rellah/notepyd.git
+  ```
 
   Source the script in your .bashrc, .zshrc by typing:
 
