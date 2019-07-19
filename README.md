@@ -16,8 +16,6 @@ A simple note taking script by Rellah
 alias notepyd="python3 ~/path/to/notepyd.py"
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
 ### Usage
 
   Notepyd runs via terminal arguments, the usage is as follows:
@@ -32,7 +30,7 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/rellah/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://gist.github.com/rellah/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to me.
 
 ## Authors
 
