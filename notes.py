@@ -30,7 +30,7 @@ class Notes:
         currentNotes = dict()
         count = 1
         while True:
-            userinput = input()
+            userinput = input("%d. " % (count))
             if len(userinput) >= 1:
                 currentNotes[count] = userinput
                 count += 1
@@ -51,10 +51,22 @@ class Notes:
             else:
                 del shelf[title]
                 print("You completed all your tasks!")
+        else:
+            print("Invalid number.")
+        Notes.sort_list(shelf, title)
 
     # TODO
-    def add_step(shelf, title, append_step):
-        pass
+    def add_step(shelf, title):
+        content = shelf[title]
+        stepCount = len(content) + 1
+        while True:
+            userinput = input("%d. " % (stepCount))
+            if len(userinput) >= 1:
+                content[stepCount] = userinput
+                stepCount += 1
+            else:
+                break
+        shelf[title] = dict(content)
 
     def delete_note(shelf, title):
         if title in shelf.keys():
@@ -72,3 +84,13 @@ class Notes:
             print("+----%s----+" % (title))
             for index, line in shelf[title].items():
                 print("%d. %s" % (index, line))
+
+    def sort_list(shelf, title):
+        count = 1
+        _list = shelf[title]
+        newList = dict()
+        for index, text in _list.items():
+            newList[count] = text
+            count += 1
+        shelf[title] = newList
+

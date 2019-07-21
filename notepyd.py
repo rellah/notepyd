@@ -10,7 +10,14 @@
         notes tick 'title'  - Check off a done task
         notes del  'title'  - Removes a note of your choice
         notes delall        - Removes all notes in the database.
-https://github.com/rellah/py-scripts/invitations
+        --------------------------------------------------------
+        notepyd list                - Lits all current notes
+        notepyd delall              - Deletes all notes/lists
+        notepyd add  note           - Lets you add a note.
+        notepyd add  list           - Lets you add a list (think TODO)
+        notepyd del  'title'        - Removes the note/list you entered.
+        notepyd 'title' tick        - Lets you check off a completed task.
+        note
 
 """
 import shelve
@@ -32,6 +39,8 @@ else:
         if len(sys.argv) == 3:
             if sys.argv[1].lower()   == 'add':
                 Notes.add_note(notesShelf, sys.argv[2])
+            elif sys.argv[1].lower() == 'append':
+                Notes.add_step(notesShelf, sys.argv[2])
             elif sys.argv[1].lower() == 'del':
                 Notes.delete_note(notesShelf, sys.argv[2])
             elif sys.argv[1].lower() == 'view':
