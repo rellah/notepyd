@@ -33,7 +33,6 @@ Then simply restart your terminal, or source the .rc, example for .zshrc:
 source ~/.zshrc
 ```
 
-
 ### Usage
 
   Notepyd runs via terminal arguments, the usage is as follows:
@@ -48,6 +47,7 @@ source ~/.zshrc
     | notepyd  tick   'title'     - Lets you check off a completed task       |
     | notepyd  append 'title'     - Appends a task/text to a list/note        |
 ```
+
 
 ## Contributing
 
