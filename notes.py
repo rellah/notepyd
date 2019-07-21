@@ -9,6 +9,7 @@ class Notes:
     def __init__(self):
         pass
 
+    # ..it prints the usage!
     def print_usage():
         print("""
     Notepyd Usage:
@@ -25,6 +26,7 @@ class Notes:
 
             """)
 
+    # Lists all notes
     def list_notes(shelf):
         for title, content in shelf.items():
             print("+----- %s -----+" % (title))
@@ -32,6 +34,7 @@ class Notes:
                 print("%d. %s" % (index, line))
             print("")
 
+    # Adds a note
     def add_note(shelf, title):
         currentNotes = dict()
         count = 1
@@ -49,6 +52,7 @@ class Notes:
                     print("Nothing has been added.")
                     break
 
+    # Deletes a step/task from a list
     def delete_step(shelf, title, step):
         step = int(step)
         content = shelf[title]
@@ -64,6 +68,7 @@ class Notes:
             print("Invalid number.")
         Notes.sort_list(shelf, title)
 
+    # Adds a step/task to the end of a list
     def add_step(shelf, title):
         content = shelf[title]
         stepCount = len(content) + 1
@@ -76,23 +81,27 @@ class Notes:
                 break
         shelf[title] = dict(content)
 
+    # Deletes a note/list
     def delete_note(shelf, title):
         if title in shelf.keys():
             del shelf[title]
         else:
             print("Note could not be found.")
 
+    # Deletes all notes/lists
     def delete_all_notes(shelf):
         for title in shelf.keys():
             del shelf[title]
             print("Deleting note '%s'..." % (title))
 
+    # Views a note/list
     def view_note(shelf, title):
         if title in shelf.keys():
             print("+----%s----+" % (title))
             for index, line in shelf[title].items():
                 print("%d. %s" % (index, line))
 
+    # Sorts a list, mainly used to reorder after deleting a step/task
     def sort_list(shelf, title):
         count = 1
         _list = shelf[title]
