@@ -11,12 +11,18 @@ class Notes:
 
     def print_usage():
         print("""
-            Notepyd Usage:
-                notes list         - Lists all current notes
-                notes add  'title' - Allowes you to enter a note
-                notes tick 'title' - Check off a done task
-                notes del  'title' - Removes a note of your choice
-                notes delall       - Removes all notes in the database
+    Notepyd Usage:
+    +-------------------------------------------------------------------------+
+    | notepyd  list               - Lits all current notes                    |
+    | notepyd  delall             - Deletes all notes/lists                   |
+    | notepyd  add    'title'     - Current way of adding a note/title        |
+    | !notepyd add    note        - ^^ (NOT WORKING YET) Lets you add a note  |
+    | !notepyd add    list        -    (NOT WORKING YET) Lets you add a list  |
+    | notepyd  del    'title'     - Removes the note/list you entered.        |
+    | notepyd  tick   'title'     - Lets you check off a completed task       |
+    | notepyd  append 'title'     - Appends a task/text to a list/note        |
+    +-------------------------------------------------------------------------+
+
             """)
 
     def list_notes(shelf):
@@ -43,7 +49,6 @@ class Notes:
                     print("Nothing has been added.")
                     break
 
-    # TODO Add in sorting by index once a step has been deleted
     def delete_step(shelf, title, step):
         step = int(step)
         content = shelf[title]
@@ -59,7 +64,6 @@ class Notes:
             print("Invalid number.")
         Notes.sort_list(shelf, title)
 
-    # TODO
     def add_step(shelf, title):
         content = shelf[title]
         stepCount = len(content) + 1

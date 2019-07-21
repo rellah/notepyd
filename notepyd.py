@@ -3,21 +3,17 @@
     notepyd.py
     a simple note taking script by Max Walsh
 
-    Notepyd Usage:
-        notes list          - Lists all current notes
-        tes l
-        notes add  'title'  - Allows you to enter a note
-        notes tick 'title'  - Check off a done task
-        notes del  'title'  - Removes a note of your choice
-        notes delall        - Removes all notes in the database.
-        --------------------------------------------------------
-        notepyd list                - Lits all current notes
-        notepyd delall              - Deletes all notes/lists
-        notepyd add  note           - Lets you add a note.
-        notepyd add  list           - Lets you add a list (think TODO)
-        notepyd del  'title'        - Removes the note/list you entered.
-        notepyd 'title' tick        - Lets you check off a completed task.
-        note
+        Notepyd Usage:
+    +-------------------------------------------------------------------------+
+    | notepyd  list               - Lits all current notes                    |
+    | notepyd  delall             - Deletes all notes/lists                   |
+    | notepyd  add    'title'     - Current way of adding a note/title        |
+    | !notepyd add    note        - ^^ (NOT WORKING YET) Lets you add a note  |
+    | !notepyd add    list        -    (NOT WORKING YET) Lets you add a list  |
+    | notepyd  del    'title'     - Removes the note/list you entered.        |
+    | notepyd  tick   'title'     - Lets you check off a completed task       |
+    | notepyd  append 'title'     - Appends a task/text to a list/note        |
+    +-------------------------------------------------------------------------+
 
 """
 import shelve
