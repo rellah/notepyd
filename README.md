@@ -6,7 +6,8 @@ A simple note taking script by Rellah
  
 ### Dependencies
 
-  Notepyd right now only requires tabulate (to pretty print the notes)
+  Notepyd right now only requires tabulate. (to pretty print the notes)
+  
   You can install tabulate via pip:
   
   ```
