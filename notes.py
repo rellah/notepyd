@@ -4,7 +4,7 @@ Notes class
      and removing clutter from the main class.
 """
 from tabulate import tabulate
-import pandas
+
 
 class Notes:
     def __init__(self):
