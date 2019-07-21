@@ -2,9 +2,19 @@
 
 A simple note taking script by Rellah
 
-
 ## Getting Started
+ 
+### Dependencies
+
+  Notepyd right now only requires tabulate.
+  You can install tabulate via pip:
   
+  ```
+  pip install tabulate
+  ```
+  
+### Installation
+
   Clone or download the repository
   
   ```
@@ -28,7 +38,6 @@ source ~/.zshrc
   Notepyd runs via terminal arguments, the usage is as follows:
 
 ```
-    Notepyd Usage:
     | notepyd  list               - Lits all current notes                    |
     | notepyd  delall             - Deletes all notes/lists                   |
     | notepyd  add    'title'     - Current way of adding a note/title        |
@@ -37,7 +46,6 @@ source ~/.zshrc
     | notepyd  del    'title'     - Removes the note/list you entered.        |
     | notepyd  tick   'title'     - Lets you check off a completed task       |
     | notepyd  append 'title'     - Appends a task/text to a list/note        |
-
 ```
 
 ## Contributing
