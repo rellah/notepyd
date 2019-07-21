@@ -4,7 +4,7 @@ Notes class
      and removing clutter from the main class.
 """
 from tabulate import tabulate
-
+import pandas
 
 class Notes:
     def __init__(self):
@@ -31,7 +31,7 @@ class Notes:
     def list_notes(shelf):
         print('')
         for title, content in shelf.items():
-            print(tabulate(content.items(), headers=(['List', title])))
+            print(tabulate(content.items(), headers=(['', title])))
             print('')
 
 
@@ -45,11 +45,10 @@ class Notes:
                 currentNotes[count] = userinput
                 count += 1
             else:
-                if len(currentNotes) > 1:
+                if len(currentNotes) >= 1:
                     shelf[title] = dict(currentNotes)
                     print("Note successfully added!")
                     break
-                else:
                     print("Nothing has been added.")
                     break
 
