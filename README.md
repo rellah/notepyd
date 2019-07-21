@@ -28,11 +28,16 @@ source ~/.zshrc
   Notepyd runs via terminal arguments, the usage is as follows:
 
 ```
-        notepyd list                - Lists all current notes
-        notepyd add  'title'        - Allows you to enter a note
-        notepyd tick 'title' index  - Check off a done task
-        notepyd del  'title'        - Removes a note of your choice
-        notepyd delall              - Removes all notes in the database.
+    Notepyd Usage:
+    | notepyd  list               - Lits all current notes                    |
+    | notepyd  delall             - Deletes all notes/lists                   |
+    | notepyd  add    'title'     - Current way of adding a note/title        |
+    | !notepyd add    note        - ^^ (NOT WORKING YET) Lets you add a note  |
+    | !notepyd add    list        -    (NOT WORKING YET) Lets you add a list  |
+    | notepyd  del    'title'     - Removes the note/list you entered.        |
+    | notepyd  tick   'title'     - Lets you check off a completed task       |
+    | notepyd  append 'title'     - Appends a task/text to a list/note        |
+
 ```
 
 ## Contributing
