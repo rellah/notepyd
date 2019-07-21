@@ -26,14 +26,16 @@ if len(sys.argv) == 1:
     Notes.print_usage()
 else:
     try:
-        notesShelf = shelve.open('notes')
+        notesShelf = shelve.open('notes')  # Opens the shelf containing Notes
         if len(sys.argv) == 2:
-            if sys.argv[1].lower()   == 'list':
+            if sys.argv[1].lower() == 'help':
+                Notes.print_usage()
+            if sys.argv[1].lower() == 'list':
                 Notes.list_notes(notesShelf)
             elif sys.argv[1].lower() == 'delall':
                 Notes.delete_all_notes(notesShelf)
         if len(sys.argv) == 3:
-            if sys.argv[1].lower()   == 'add':
+            if sys.argv[1].lower() == 'add':
                 Notes.add_note(notesShelf, sys.argv[2])
             elif sys.argv[1].lower() == 'append':
                 Notes.add_step(notesShelf, sys.argv[2])
@@ -42,11 +44,10 @@ else:
             elif sys.argv[1].lower() == 'view':
                 Notes.view_note(notesShelf, sys.argv[2])
         if len(sys.argv) == 4:
-            if sys.argv[1].lower()   == 'tick':
+            if sys.argv[1].lower() == 'tick':
                 Notes.delete_step(notesShelf, sys.argv[2], sys.argv[3])
-    # Closes the database safely before termination
     finally:
-        notesShelf.close()
+        notesShelf.close()  # Closes the shelf
 
 """
     TODO
