@@ -35,9 +35,13 @@ class Notes:
                 currentNotes[count] = userinput
                 count += 1
             else:
-                shelf[title] = dict(currentNotes)
-                print("Note successfully added!")
-                break
+                if len(currentNotes) > 1:
+                    shelf[title] = dict(currentNotes)
+                    print("Note successfully added!")
+                    break
+                else:
+                    print("Nothing has been added.")
+                    break
 
     # TODO Add in sorting by index once a step has been deleted
     def delete_step(shelf, title, step):
