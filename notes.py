@@ -3,6 +3,7 @@ Notes class
      Dedicated to encapsulating the listing, adding, removing etc.
      and removing clutter from the main class.
 """
+import pprint
 
 
 class Notes:
@@ -29,10 +30,11 @@ class Notes:
     # Lists all notes
     def list_notes(shelf):
         for title, content in shelf.items():
-            print("+----- %s -----+" % (title))
+            print("+" + '-' * 50 + "+")
+            print(title.center(52, ' '))
             for index, line in content.items():
                 print("%d. %s" % (index, line))
-            print("")
+            print("+" + '-' * 50 + "+" + "\n")
 
     # Adds a note
     def add_note(shelf, title):
