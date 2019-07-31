@@ -17,38 +17,43 @@
 
 """
 import shelve
-import sys
 from notes import Notes
+import argparse
 
+parser = argparse.ArgumentParser()
+parser.add_argument('-l','--list', help='List all current notes', action='store_true')
+parser.add_argument('-a','--add', help='Current way of adding a note/title', type=str)
+parser.add_argument('-ap','--append', help='Append to note', type=str)
+parser.add_argument('-d','--delete', help='Delete note', type=str)
+parser.add_argument('-da','--delall', help='Delete all notes', action='store_true')
+parser.add_argument('-v','--view', help='View a note', type=str)
+parser.add_argument('-t','--tick', help='Check off completed note', type=str)
+parser.add_argument('--step', help='unknown, required for tick', type=int)
 
-# If no argument is specified, print help. Otherwise, continue.
-if len(sys.argv) == 1:
-    Notes.print_usage()
-else:
-    try:
-        notesShelf = shelve.open('notes')  # Opens the shelf containing Notes
-        if len(sys.argv) == 2:
-            if sys.argv[1].lower() == 'help':
-                Notes.print_usage()
-            if sys.argv[1].lower() == 'list':
-                Notes.list_notes(notesShelf)
-            elif sys.argv[1].lower() == 'delall':
-                Notes.delete_all_notes(notesShelf)
-        if len(sys.argv) == 3:
-            if sys.argv[1].lower() == 'add':
-                Notes.add_note(notesShelf, sys.argv[2])
-            elif sys.argv[1].lower() == 'append':
-                Notes.add_step(notesShelf, sys.argv[2])
-            elif sys.argv[1].lower() == 'del':
-                Notes.delete_note(notesShelf, sys.argv[2])
-            elif sys.argv[1].lower() == 'view':
-                Notes.view_note(notesShelf, sys.argv[2])
-        if len(sys.argv) == 4:
-            if sys.argv[1].lower() == 'tick':
-                Notes.delete_step(notesShelf, sys.argv[2], sys.argv[3])
-    finally:
-        notesShelf.close()  # Closes the shelf
+args = parser.parse_args()
 
+try:
+    notesShelf = shelve.open('notes')
+    if args.add:
+        Notes.add_note(notesShelf, args.add)
+    elif args.append:
+        Notes.add_step(notesShelf, args.append)
+    elif args.delete:
+        Notes.delete_note(notesShelf, args.delete)
+    elif args.delall:
+        Notes.delete_all_notes(notesShelf)
+    elif args.view:
+         Notes.view_note(notesShelf, args.view)
+    elif args.tick:
+        Notes.delete_step(notesShelf, args.tick, args.step)
+    elif args.list:
+        Notes.list_notes(notesShelf)
+
+except ImportError:
+    print('There was an error')
+    
+finally:
+    notesShelf.close()
 """
     TODO
         - System to rank notes by importance
