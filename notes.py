@@ -60,7 +60,7 @@ class Notes:
             del content[step]
             if len(content.keys()) >= 1:
                 shelf[title] = content
-                print("Task complete!")
+                print("Task {} complete!".format(step))
             else:
                 del shelf[title]
                 print("You completed all your tasks!")
